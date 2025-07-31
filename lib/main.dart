@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tetris/gamer/gamer.dart';
 import 'package:tetris/generated/l10n.dart';
@@ -9,6 +10,13 @@ import 'package:tetris/panel/page_portrait.dart';
 import 'gamer/keyboard.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Colors.transparent,
+  ));
+
   _disableDebugPrint();
   runApp(const MainApp());
 }
