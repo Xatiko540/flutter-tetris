@@ -17,6 +17,8 @@ void main() {
     systemNavigationBarColor: Colors.transparent,
   ));
 
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   _disableDebugPrint();
   runApp(const MainApp());
 }
